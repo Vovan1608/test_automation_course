@@ -42,3 +42,17 @@ const inputsType = Array.from(
 );
 console.log(inputsType);
 ```
+
+Task 5
+
+Utilizing CSS selectors in conjunction with JavaScript, identify all the social media button elements present on a specified web page and determine their respective destination URLs.
+
+```javascript
+const socialMediaButtonElements = Array.from(
+  document.querySelectorAll(".footer_social-link"),
+  ({ baseURI }) => {
+    return baseURI;
+  }
+);
+console.log(socialMediaButtonElements);
+```
