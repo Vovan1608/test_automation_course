@@ -1,5 +1,7 @@
 Task 1
+
 On a Home page, there are a series of images. Write a script that:
+
 	1. Iterates through all the images on the page.	
 	2. Logs to the console those images that have a height greater than 300 pixels.
 	3. After analyzing all images, displays in the console the total number of images that meet the condition.
