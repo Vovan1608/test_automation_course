@@ -61,8 +61,6 @@ Task 6
 Log into your profile at https://www.greencity.social/#/profile, there is a calendar that displays the week, with navigation buttons (previous/next) and the days of the week.
 
 1. Determine the current day: Locate the day that has the class current-number and display its value. (Expected result, for example, "Current day: 20 September 2023").
-2. Check for navigation buttons: Ensure there are two navigation buttons (previous/next) and display their images.
-3. Determine the displayed days of the week: Collect all elements with the class day-name and display their names.
 
 ```javascript
 const month = [
@@ -90,3 +88,22 @@ console.log(
   } ${new Date().getFullYear()}`
 );
 ```
+
+2. Check for navigation buttons: Ensure there are two navigation buttons (previous/next) and display their images.
+
+```javascript
+const arrowPrevious = document.querySelector('img[alt="arrow previous"]');
+const arrowNext = document.querySelector('img[alt="arrow next"]');
+console.log(
+  arrowPrevious
+    ? `Previos button image src is ${arrowPrevious.src}`
+    : "Previos buttont dosen`t find!"
+);
+console.log(
+  arrowNext
+    ? `Next button image src is ${arrowNext.src}`
+    : "Next buttont dosen`t find!"
+);
+```
+
+3. Determine the displayed days of the week: Collect all elements with the class day-name and display their names.
