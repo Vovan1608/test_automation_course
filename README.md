@@ -28,3 +28,13 @@ Find all button elements present on a specified web page and output the cumulati
 ```javascript
 console.log(document.getElementsByTagName("button").length);
 ```
+
+Task 4
+
+Find and determine the types of all input fields (input) on a web page.
+
+```javascript
+Array.from(document.getElementsByTagName("input"), ({ type }) =>
+  console.log(type)
+);
+```
