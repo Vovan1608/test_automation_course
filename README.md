@@ -86,7 +86,7 @@ const currentDay = document.getElementsByClassName(
 
 console.log(
   `Current day: ${currentDay} ${
-    month[new Date().getMonth() + 1]
+    month[new Date().getMonth()]
   } ${new Date().getFullYear()}`
 );
 ```
