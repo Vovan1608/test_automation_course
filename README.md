@@ -56,3 +56,37 @@ const socialMediaButtonElements = Array.from(
 );
 console.log(socialMediaButtonElements);
 ```
+
+Task 6
+Log into your profile at https://www.greencity.social/#/profile, there is a calendar that displays the week, with navigation buttons (previous/next) and the days of the week.
+
+1. Determine the current day: Locate the day that has the class current-number and display its value. (Expected result, for example, "Current day: 20 September 2023").
+2. Check for navigation buttons: Ensure there are two navigation buttons (previous/next) and display their images.
+3. Determine the displayed days of the week: Collect all elements with the class day-name and display their names.
+
+```javascript
+const month = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+const currentDay = document.getElementsByClassName(
+  "day-number current-number ng-star-inserted"
+)[0].innerText;
+
+console.log(
+  `Current day: ${currentDay} ${
+    month[new Date().getMonth() + 1]
+  } ${new Date().getFullYear()}`
+);
+```
