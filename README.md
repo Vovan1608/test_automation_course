@@ -34,7 +34,8 @@ Task 4
 Find and determine the types of all input fields (input) on a web page.
 
 ```javascript
-Array.from(document.getElementsByTagName("input"), ({ type }) =>
-  console.log(type)
-);
+Array.from(document.getElementsByTagName("input"), ({ type }) => {
+  console.log(type);
+  return type;
+});
 ```
