@@ -107,3 +107,14 @@ console.log(
 ```
 
 3. Determine the displayed days of the week: Collect all elements with the class day-name and display their names.
+
+```javascript
+const daysName = Array.from(
+  document.getElementsByClassName("day-name"),
+  ({ innerText }) => {
+    return innerText;
+  }
+);
+
+daysName.forEach((day) => console.log(day));
+```
