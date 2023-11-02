@@ -18,7 +18,7 @@ Task 2
 Display the number of unique colors used in the elements on the page.
 
 ```javascript
-
+document.styleSheets[0].cssRules[0].cssText.slice(6).split("#").length - 1;
 ```
 
 Task 3
