@@ -27,3 +27,30 @@ console.log(
     "Element with such text is not found!"
 );
 ```
+
+Task 4
+
+Validate the presence and visibility of the site search icon on the webpage, and ensure the image associated with the search icon has the appropriate alt text and a source (src) path.
+
+```javascript
+const searchIcon = Array.from($x('.//li[@aria-label="site search"]/img'));
+
+if (searchIcon.length === 1) {
+  console.log("The site search icon on the webpage is presence.");
+  const { alt: altAttr, src: srcAttr, style: styleProp } = searchIcon[0];
+  console.log(
+    styleProp.display === "none" ||
+      "The site search icon on the webpage is visibile."
+  );
+  (altAttr.length > 0) |
+    console.log(
+      "The image associated with the search icon has the appropriate alt text."
+    );
+  (srcAttr.length > 0) |
+    console.log(
+      "The image associated with the search icon has a source (src) path."
+    );
+} else {
+  console.log("No way!");
+}
+```
