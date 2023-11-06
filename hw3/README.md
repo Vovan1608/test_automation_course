@@ -37,11 +37,11 @@ const searchIcon = Array.from($x('.//li[@aria-label="site search"]/img'));
 
 if (searchIcon.length === 1) {
   console.log("The site search icon on the webpage is presence.");
+
   const { alt: altAttr, src: srcAttr, style: styleProp } = searchIcon[0];
-  console.log(
-    styleProp.display === "none" ||
-      "The site search icon on the webpage is visibile."
-  );
+
+  styleProp.display === "none" ||
+    console.log("The site search icon on the webpage is visibile.");
   (altAttr.length > 0) |
     console.log(
       "The image associated with the search icon has the appropriate alt text."
