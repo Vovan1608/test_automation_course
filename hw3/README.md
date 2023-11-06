@@ -46,7 +46,7 @@ if (searchIcon.length === 1) {
     console.log(
       "The image associated with the search icon has the appropriate alt text."
     );
-  (srcAttr.length > 0) |
+  srcAttr.includes("https://www.") |
     console.log(
       "The image associated with the search icon has a source (src) path."
     );
