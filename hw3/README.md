@@ -87,5 +87,23 @@ Validate the website's ability to switch languages effectively.
 4. Should the language alteration succeed, log the preceding and new language settings into the console for verification purposes.
 
 ```javascript
+const languageSwitcher = $x('.//ul[@aria-label="language switcher"]')[0];
 
+function handleSwitcherClick() {
+  console.log("The language toggle element was detected");
+
+  languageSwitcher.removeEventListener("click", handleSwitcherClick);
+}
+
+languageSwitcher.addEventListener("click", handleSwitcherClick);
+
+let previousLanguage = "UA";
+//let nextLanguage = $x('.//ul[@aria-label="language switcher"]/li/span')[0].innerText;
+//if (previousLanguage !== nextLanguage) {
+//console.log(previousLanguage);
+//console.log(nextLanguage);
+//previousLanguage = nextLanguage;
+//} else {
+//console.log('The language wasn`t switched.');
+//}
 ```
