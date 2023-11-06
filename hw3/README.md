@@ -76,3 +76,16 @@ inputsCheckbox.forEach(({ checked }) => {
 console.log(`Number of checked checkboxes is ${checkedCheckbox}`);
 console.log(`Number of unchecked checkboxes is ${uncheckedCheckbox}`);
 ```
+
+Task 6 \*
+
+Validate the website's ability to switch languages effectively.
+
+1. Initiate a search to identify the user interface element designated for language toggling.
+2. If the specified element is successfully pinpointed, activate it to attempt a language change.
+3. Log the result in the console, specifying whether the language toggle element was detected.
+4. Should the language alteration succeed, log the preceding and new language settings into the console for verification purposes.
+
+```javascript
+
+```
