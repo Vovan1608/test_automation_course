@@ -54,3 +54,25 @@ if (searchIcon.length === 1) {
   console.log("No way!");
 }
 ```
+
+Task 5
+
+Log into your profile at https://www.greencity.social/#/profile. At the bottom of the page, there are checkboxes. Find them, check their state (checked or not), and display a message about the number of checked and unchecked checkboxes.
+
+```javascript
+const inputsCheckbox = Array.from(
+  $x(
+    './/p[contains(text(), "Конфіденційність профілю")]/following-sibling::ul/li/label/input'
+  )
+);
+
+let checkedCheckbox = 0;
+let uncheckedCheckbox = 0;
+
+inputsCheckbox.forEach(({ checked }) => {
+  checked ? (checkedCheckbox += 1) : (uncheckedCheckbox += 1);
+});
+
+console.log(`Number of checked checkboxes is ${checkedCheckbox}`);
+console.log(`Number of unchecked checkboxes is ${uncheckedCheckbox}`);
+```
