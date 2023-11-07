@@ -89,6 +89,10 @@ Validate the website's ability to switch languages effectively.
 ```javascript
 const languageSwitcher = $x('.//ul[@aria-label="language switcher"]')[0];
 
+let previousLanguage = $x('.//ul[@aria-label="language switcher"]/li/span')[0]
+  .innerText;
+let currentLanguage = " ";
+
 function handleSwitcherClick() {
   console.log("The language toggle element was detected");
 
@@ -97,13 +101,23 @@ function handleSwitcherClick() {
 
 languageSwitcher.addEventListener("click", handleSwitcherClick);
 
-let previousLanguage = "UA";
-//let nextLanguage = $x('.//ul[@aria-label="language switcher"]/li/span')[0].innerText;
-//if (previousLanguage !== nextLanguage) {
-//console.log(previousLanguage);
-//console.log(nextLanguage);
-//previousLanguage = nextLanguage;
-//} else {
-//console.log('The language wasn`t switched.');
-//}
+function handleChangeLang() {
+  let ulLangSwitch = document.querySelectorAll(
+    'ul[aria-label="language switcher"]'
+  );
+  let ariaExpanded = ulLangSwitch[0].ariaExpanded;
+
+  if (
+    document.querySelectorAll("li.lang-option span")[0].innerText !==
+    previousLanguage
+  ) {
+    console.log("the preceding language is: " + previousLanguage);
+    currentLanguage = document.querySelectorAll("li.lang-option span")[0]
+      .innerText;
+    console.log("the new language is: " + currentLanguage);
+    previousLanguage = currentLanguage;
+  }
+}
+
+languageSwitcher.addEventListener("click", handleChangeLang);
 ```
