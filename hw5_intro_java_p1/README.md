@@ -184,3 +184,27 @@ public class Task6
     }
 }
 ```
+
+Task 7
+
+Interest Calculator
+
+Write a program that calculates the final amount of a bank deposit after a given number of years at a given interest rate. The program should ask the user for the initial deposit amount, the annual interest rate, and the number of years. Use a loop to calculate compound interest for each year and output the result to the console.
+
+Some information for solution
+
+The formula for calculating the final amount of a bank deposit using compound interest is given by:
+
+A=P×(1+r)t
+
+where:
+
+    - is the amount of money accumulated after n years, including interest.
+    - is the principal amount (the initial amount of money).
+
+    - is the annual interest rate (decimal).
+    -t is the time the money is invested for, in years.
+
+```java
+
+```
