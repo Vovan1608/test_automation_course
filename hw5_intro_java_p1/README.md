@@ -23,3 +23,33 @@ public class Task1
     }
 }
 ```
+
+Task 2
+
+Average Temperature Calculation
+
+Write a program that asks the user for the temperature for five days (use the Scanner to enter data) and calculates the average temperature over those days. Use the float variable type to store temperatures and arithmetic operators to compute the average value.
+
+```java
+import java.util.Scanner;
+
+public class Task1
+{
+    public static void main( String[] args )
+    {
+        Scanner scanner = new Scanner(System.in);
+        float sumOfTemperatures = 0;
+        int numberOfDays = 5;
+
+        for (int i = 1; i <= numberOfDays; i+= 1) {
+            System.out.println( "Take me  temperature for " + i + " day.");
+            float temperatureForDay = scanner.nextFloat();
+            sumOfTemperatures += temperatureForDay;
+        }
+
+        float averageTemperature = sumOfTemperatures / numberOfDays;
+
+        System.out.println("The average temperature over those days: " + averageTemperature);
+    }
+}
+```
