@@ -91,3 +91,27 @@ public class Task3 {
     }
 }
 ```
+
+Task 4
+
+Even or Odd Number Checker
+
+Write a program that asks the user to enter a number. The program then determines whether the number is even or odd using a control statement and prints the result.
+
+```java
+import java.util.Scanner;
+
+public class Task4 {
+
+    public static void main( String[] args ) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println( "Enter the number: " );
+        int number = scanner.nextInt();
+        String evenOrOdd = (number % 2) == 0 ? "even" : "odd";
+
+        System.out.println("Number is " + evenOrOdd);
+    }
+}
+```
