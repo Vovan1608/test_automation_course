@@ -111,7 +111,7 @@ public class Task4 {
         int number = scanner.nextInt();
         String evenOrOdd = (number % 2) == 0 ? "even" : "odd";
 
-        System.out.println("Number is " + evenOrOdd);
+        System.out.println("Number " + number + " is " + evenOrOdd);
     }
 }
 ```
