@@ -136,7 +136,6 @@ public class Task5
         String grade = " ";
 
         if ( numericalScore > 0 & numericalScore < 21 ) {
-
             grade = "E";
         } else if (numericalScore > 20 & numericalScore < 41) {
             grade = "D";
@@ -150,4 +149,38 @@ public class Task5
 
         System.out.println("Yuor grade is: " + grade);
     }
+```
+
+Task 6
+
+Simple Age Category Classifier
+
+The program asks the user to input their age, and based on the age, it categorizes them as a child, teenager, adult, or senior. For example, 0-12 years could be a child, 13-19 a teenager, 20-59 an adult, and 60+ a senior.
+
+```java
+import java.util.Scanner;
+
+public class Task6
+{
+    public static void main( String[] args )
+    {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Give me yuor age: ");
+        double age = scanner.nextDouble();
+        String ageCategory = " ";
+
+        if ( age > 0 & age < 13 ) {
+            ageCategory = "child";
+        } else if (age >= 13 & age < 20) {
+            ageCategory = "teenager";
+        } else if (age >= 20 & age < 59) {
+            ageCategory = "adult";
+        } else {
+            ageCategory = "senior";
+        }
+
+        System.out.println("Your category is " + ageCategory);
+    }
+}
 ```
