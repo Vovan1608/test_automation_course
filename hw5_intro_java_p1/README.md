@@ -13,13 +13,13 @@ public class Task1
     {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println( "Take me the price of a product excluding VAT: " );
+        System.out.println( "Give me the price of a product excluding VAT: " );
         double priceWithoutVAT = scanner.nextDouble();
         double VAT = 0.2;
         double  priceWithVAT = priceWithoutVAT * (1 + VAT);
 
-        System.out.println("the price of a product excluding VAT: " + priceWithoutVAT);
-        System.out.println("the price of a product including VAT: " + priceWithVAT);
+        System.out.println("The price of a product excluding VAT: " + priceWithoutVAT);
+        System.out.println("The price of a product including VAT: " + priceWithVAT);
     }
 }
 ```
@@ -114,4 +114,40 @@ public class Task4 {
         System.out.println("Number " + number + " is " + evenOrOdd);
     }
 }
+```
+
+Task 5
+
+Grade Calculator
+
+Write a program that takes a numerical score (like a test score out of 100) and outputs the corresponding letter grade (A, B, C, D, F). Define the grade boundaries yourself (for example, 90-100 is an A, 80-89 is a B, etc.).
+
+```java
+import java.util.Scanner;
+
+public class Task5
+{
+    public static void main( String[] args )
+    {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println( "Give me a numerical score from 1 to 100." );
+        int numericalScore = scanner.nextInt();
+        String grade = " ";
+
+        if ( numericalScore > 0 & numericalScore < 21 ) {
+
+            grade = "E";
+        } else if (numericalScore > 20 & numericalScore < 41) {
+            grade = "D";
+        } else if (numericalScore > 40 & numericalScore < 61) {
+            grade = "C";
+        } else if (numericalScore > 60 & numericalScore < 81) {
+            grade = "B";
+        } else {
+            grade = "A";
+        }
+
+        System.out.println("Yuor grade is: " + grade);
+    }
 ```
