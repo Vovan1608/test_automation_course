@@ -199,11 +199,11 @@ A=P×(1+r)t
 
 where:
 
-    - is the amount of money accumulated after n years, including interest.
-    - is the principal amount (the initial amount of money).
+    - 'A' is the amount of money accumulated after n years, including interest.
+    - 'P' is the principal amount (the initial amount of money).
 
-    - is the annual interest rate (decimal).
-    -t is the time the money is invested for, in years.
+    - 'r' is the annual interest rate (decimal).
+    - 't' is the time the money is invested for, in years.
 
 ```java
 
