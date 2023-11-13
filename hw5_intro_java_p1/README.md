@@ -41,13 +41,13 @@ public class Task2 {
 
         float sumOfTemperatures = 0;
         int numberOfDays = 5;
-        int i = 1;
+        int numOfDay = 1;
 
-        while (i <= numberOfDays) {
-            System.out.println( "Take me  temperature for " + i + " day.");
+        while (numOfDay <= numberOfDays) {
+            System.out.println( "Take me  temperature for " + numOfDay + " day.");
             float temperatureForDay = scanner.nextFloat();
             sumOfTemperatures += temperatureForDay;
-            i += 1;
+            numOfDay += 1;
         }
 
         float averageTemperature = sumOfTemperatures / numberOfDays;
@@ -219,5 +219,56 @@ where:
     - 't' is the time the money is invested for, in years.
 
 ```java
+import java.util.Scanner;
 
+class Task7 {
+
+    static Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        double MAX_AMOUNT = 100;
+        double MIN_AMOUNT = 20;
+        double initialDepositAmount;
+        boolean isInitialDepositAmount;
+
+        do {
+            System.out.println("Enter the initial deposit amount (max amount - 100, min amount - 20):");
+            initialDepositAmount = scanner.nextDouble();
+            isInitialDepositAmount = initialDepositAmount >= MIN_AMOUNT & initialDepositAmount <= MAX_AMOUNT;
+        }
+
+        while (!isInitialDepositAmount);
+
+        double MAX_INTEREST = 0.1;
+        double MIN_INTEREST = 0.03;
+        double annualInterestRate;
+        boolean isAnnualInterestRate;
+
+        do {
+            System.out.println("Enter the annual interest rate (max interest - 10%, min interest - 3%):");
+            annualInterestRate = scanner.nextDouble() / 100;
+            isAnnualInterestRate = annualInterestRate >= MIN_INTEREST & annualInterestRate <= MAX_INTEREST;
+        }
+
+        while (!isAnnualInterestRate);
+
+        double MAX_YEARS = 10;
+        double MIN_YEARS = 2;
+        double numberOfYears;
+        boolean isNumberOfYears;
+
+        do {
+            System.out.println("Enter the number of years (max years - 10, min years - 2):");
+            numberOfYears = scanner.nextDouble();
+            isNumberOfYears = numberOfYears >= MIN_YEARS & numberOfYears <= MAX_YEARS;
+        }
+
+        while (!isNumberOfYears);
+
+        double finalAmount = initialDepositAmount * Math.pow(1 + annualInterestRate, numberOfYears);
+
+        System.out.println("finalAmount: " + finalAmount + " c.u.");
+    }
+}
 ```
