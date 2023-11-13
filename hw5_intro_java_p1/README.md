@@ -7,19 +7,19 @@ Create a program that asks the user for the price of a product excluding VAT and
 ```java
 import java.util.Scanner;
 
-public class Task1
-{
-    public static void main( String[] args )
-    {
-        Scanner scanner = new Scanner(System.in);
+public class Task1 {
+
+    static Scanner scanner = new Scanner(System.in);
+
+    public static void main( String[] args ) {
 
         System.out.println( "Give me the price of a product excluding VAT: " );
         double priceWithoutVAT = scanner.nextDouble();
         double VAT = 0.2;
         double  priceWithVAT = priceWithoutVAT * (1 + VAT);
 
-        System.out.println("The price of a product excluding VAT: " + priceWithoutVAT);
-        System.out.println("The price of a product including VAT: " + priceWithVAT);
+        System.out.println("the price of a product excluding VAT: " + priceWithoutVAT);
+        System.out.println("the price of a product including VAT: " + priceWithVAT);
     }
 }
 ```
@@ -33,18 +33,21 @@ Write a program that asks the user for the temperature for five days (use the Sc
 ```java
 import java.util.Scanner;
 
-public class Task2
-{
-    public static void main( String[] args )
-    {
-        Scanner scanner = new Scanner(System.in);
+public class Task2 {
+
+    static Scanner scanner = new Scanner(System.in);
+
+    public static void main( String[] args ) {
+
         float sumOfTemperatures = 0;
         int numberOfDays = 5;
+        int i = 1;
 
-        for (int i = 1; i <= numberOfDays; i+= 1) {
+        while (i <= numberOfDays) {
             System.out.println( "Take me  temperature for " + i + " day.");
             float temperatureForDay = scanner.nextFloat();
             sumOfTemperatures += temperatureForDay;
+            i += 1;
         }
 
         float averageTemperature = sumOfTemperatures / numberOfDays;
@@ -65,9 +68,9 @@ import java.util.Scanner;
 
 public class Task3 {
 
-    public static void main( String[] args ) {
+    static Scanner scanner = new Scanner(System.in);
 
-        Scanner scanner = new Scanner(System.in);
+    public static void main( String[] args ) {
 
         System.out.println( "Give me the sentence." );
 
@@ -103,9 +106,9 @@ import java.util.Scanner;
 
 public class Task4 {
 
-    public static void main( String[] args ) {
+    static Scanner scanner = new Scanner(System.in);
 
-        Scanner scanner = new Scanner(System.in);
+    public static void main( String[] args ) {
 
         System.out.println( "Enter the number: " );
         int number = scanner.nextInt();
@@ -125,15 +128,15 @@ Write a program that takes a numerical score (like a test score out of 100) and 
 ```java
 import java.util.Scanner;
 
-public class Task5
-{
-    public static void main( String[] args )
-    {
-        Scanner scanner = new Scanner(System.in);
+public class Task5 {
+
+    static Scanner scanner = new Scanner(System.in);
+
+    public static void main( String[] args ) {
 
         System.out.println( "Give me a numerical score from 1 to 100." );
         int numericalScore = scanner.nextInt();
-        String grade = " ";
+        String grade;
 
         if ( numericalScore > 0 & numericalScore < 21 ) {
             grade = "E";
@@ -143,11 +146,15 @@ public class Task5
             grade = "C";
         } else if (numericalScore > 60 & numericalScore < 81) {
             grade = "B";
-        } else {
+        } else if (numericalScore > 80 & numericalScore < 101) {
             grade = "A";
+        } else {
+            grade = "Wrong income data!";
         }
 
-        System.out.println("Yuor grade is: " + grade);
+        String resultMessage = grade.length() == 1 ? "Yuor grade is: " + grade : grade;
+
+        System.out.println(resultMessage);
     }
 ```
 
@@ -160,15 +167,15 @@ The program asks the user to input their age, and based on the age, it categoriz
 ```java
 import java.util.Scanner;
 
-public class Task6
-{
-    public static void main( String[] args )
-    {
-        Scanner scanner = new Scanner(System.in);
+public class Task6 {
+
+    static Scanner scanner = new Scanner(System.in);
+
+    public static void main( String[] args ) {
 
         System.out.println("Give me yuor age: ");
         double age = scanner.nextDouble();
-        String ageCategory = " ";
+        String ageCategory;
 
         if ( age > 0 & age < 13 ) {
             ageCategory = "child";
@@ -176,11 +183,17 @@ public class Task6
             ageCategory = "teenager";
         } else if (age >= 20 & age < 59) {
             ageCategory = "adult";
-        } else {
+        } else if (age >= 59) {
             ageCategory = "senior";
+        } else {
+            ageCategory = "Wrong income data!";
         }
 
-        System.out.println("Your category is " + ageCategory);
+        int teenagerWordLength = 8;
+
+        String finalMessage = ageCategory.length() > teenagerWordLength ? ageCategory : "Your category is " + ageCategory;
+
+        System.out.println(finalMessage);
     }
 }
 ```
