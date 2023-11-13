@@ -272,3 +272,135 @@ class Task7 {
     }
 }
 ```
+
+Task 8 (using Random)
+
+Rock, Paper, Scissors Game: Create a simple rock, paper, scissors game against the computer. The computer randomly chooses rock, paper, or scissors, and the user inputs their choice. Use a loop to play multiple rounds and keep score until the user decides to quit.
+
+```java
+import java.util.Scanner;
+import java.util.Random;
+
+public class RockPaperScissor {
+
+    public static void main(String[] args) {
+
+        Scanner scn = new Scanner(System.in);
+
+        while(true) {
+
+            //1. RANDOMIZED COMPUTER MOVE
+
+            // array of string containing available moves.
+            String [] availableMoves = {"rock", "paper", "scissors"};
+
+            // using Random() function on indices of array so that it chooses a random move.
+            int indexAvailableMoves = new Random().nextInt(availableMoves.length);
+            String computerMove = availableMoves[indexAvailableMoves];
+
+            System.out.println("Computer has chosen it's move.");
+            System.out.println();
+            System.out.println("Now it's your turn to choose. Good Luck!");
+            System.out.println();
+
+            //2. PLAYER MOVE
+
+            //input
+            String userMove;
+
+            // loop until the user chooses the correct move
+            while(true) {
+                System.out.println("Please choose your move from these available moves : 'Rock' 'Paper' 'Scissors' ");
+                System.out.println("Enter the move you chose : ");
+                userMove = scn.nextLine().toLowerCase();
+
+                // checking if user's move is one of the available moves or not
+                if(userMove.equals("rock") || userMove.equals("paper") || userMove.equals("scissors")){
+                    System.out.println();
+                    break;
+                }
+
+                // if user didn't enter a valid input
+                System.out.println();
+                System.out.println("Invalid Move!!");
+                System.out.println("Please enter the move from the available moves only!");
+                System.out.println();
+            }
+
+            //printing what computer chose
+            System.out.println("Computer chose : " + computerMove);
+
+            //3. COMPARING THE MOVES & DECIDING THE WINNER
+
+            // checking for a tie
+
+            if(userMove.equals(computerMove)) {
+                System.out.println("Its a tie!");
+            }
+
+            //checking for all other moves possible
+
+            else if(userMove.equals("rock")) {
+
+                if(computerMove.equals("paper")) {
+                    System.out.println("Computer won!");
+                    System.out.println("Better luck next time!");
+                }
+                else if(computerMove.equals("scissors")) {
+                    System.out.println("You won!");
+                    System.out.println("Congratulations!");
+                }
+            }
+
+            else if(userMove.equals("paper")) {
+
+                if(computerMove.equals("rock")) {
+                    System.out.println("You won!");
+                    System.out.println("Congratulations!");
+                }
+                else if(computerMove.equals("scissors")) {
+                    System.out.println("Computer won!");
+                    System.out.println("Better luck next time!");
+                }
+            }
+
+            else if(userMove.equals("scissors")) {
+
+                if(computerMove.equals("paper")) {
+                    System.out.println("You won!");
+                    System.out.println("Congratulations!");
+                }
+                else if(computerMove.equals("rock")) {
+                    System.out.println("Computer won!");
+                    System.out.println("Better luck next time!");
+                }
+            }
+
+            System.out.println();
+            String playAgain;
+            System.out.println("Do you want to play again? ");
+
+            // loop until the user chooses the correct option
+            while(true) {
+
+                System.out.println("Type 'yes' or 'no' ");
+                playAgain = scn.nextLine().toLowerCase();
+
+                if(playAgain.equals("yes") || playAgain.equals("no")) {
+                    System.out.println();
+                    System.out.println("*****************************************************************************");
+                    System.out.println();
+                    break;
+                }
+                System.out.println();
+                System.out.println("Invalid Input");
+                System.out.println();
+            }
+
+            if(playAgain.equals("no")) {
+                break;
+            }
+        }
+    }
+}
+```
