@@ -404,3 +404,25 @@ public class RockPaperScissor {
     }
 }
 ```
+
+Task 9 (using StringBuilder)
+
+Password Generator in Java
+
+Create a Java program that generates a secure, random password based on user preferences. The program should include the following features:
+
+1. User Input for Length: Prompt the user to specify the desired length of the password. Ensure the minimum length is at least 8 characters for security.
+
+2. Incorporation of Various Character Types: The generated password should include a combination of uppercase letters, lowercase letters, numbers, and special characters (such as !, @, #, $, etc.).
+
+3. Customization Options: Allow the user to choose whether to include or exclude specific types of characters (like excluding special characters or including only alphanumeric characters).
+
+4. Random Generation: Use Java's built-in methods to ensure that the password is randomly generated and different on each execution of the program.
+
+5. Readable Output: Display the generated password to the user in a clear format.
+
+6. Security Enhancements (for advanced implementation): Add logic to avoid common password weaknesses, such as consecutive characters (e.g., 1234, abcd) or repetitive patterns (e.g., aa11bb22).
+
+```java
+
+```
