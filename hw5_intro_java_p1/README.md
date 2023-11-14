@@ -40,17 +40,17 @@ public class Task2 {
     public static void main( String[] args ) {
 
         float sumOfTemperatures = 0;
-        int numberOfDays = 5;
+        int amauntOfDays = 5;
         int numOfDay = 1;
 
-        while (numOfDay <= numberOfDays) {
+        while (numOfDay <= amauntOfDays) {
             System.out.println( "Take me  temperature for " + numOfDay + " day.");
             float temperatureForDay = scanner.nextFloat();
             sumOfTemperatures += temperatureForDay;
             numOfDay += 1;
         }
 
-        float averageTemperature = sumOfTemperatures / numberOfDays;
+        float averageTemperature = sumOfTemperatures / amauntOfDays;
 
         System.out.println("The average temperature over those days: " + averageTemperature);
     }
