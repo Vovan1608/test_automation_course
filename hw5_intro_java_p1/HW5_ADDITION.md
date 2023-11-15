@@ -123,3 +123,20 @@ public class Task3 {
     }
 }
 ```
+
+Task4 (OOP, Collections)
+
+Write class Student that provides information about the name of the student and his course. Class Student should consists of
+
+1. properties for access to these fields
+2. constructor with parameters
+3. method printStudents (List students, Integer course), which receives a list of students and the course number and prints to the console the names of the students from the list, which are taught in this course (use an iterator)
+4. methods to compare students by name and by course
+5. In the main() method:
+   - declare List students and add to the list five different students
+   - display the list of students ordered by name
+   - display the list of students ordered by course.
+
+```java
+
+```
