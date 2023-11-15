@@ -15,5 +15,30 @@ accomplish this, input five different usernames in the main method and output a 
 console indicating whether each of the entered names is valid or not.
 
 ```java
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
+public class Task1 {
+
+    static  Scanner scn = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        String USER_NAME_PATTERN = "^[a-zA-Z][a-zA-Z0-9-_\\.]{3,15}$";
+        System.out.println("Enter yuor name");
+
+        String name = scn.nextLine();
+
+        Pattern pattern = Pattern.compile(USER_NAME_PATTERN);
+        Matcher matcher = pattern.matcher(name);
+        boolean matchFound = matcher.matches();
+
+        if(matchFound) {
+            System.out.println("Name " + name + " is valid");
+        } else {
+            System.out.println("Name " + name + " isn`t valid");
+        }
+    }
+}
 ```
