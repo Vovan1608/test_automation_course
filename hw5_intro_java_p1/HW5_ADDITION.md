@@ -42,3 +42,48 @@ public class Task1 {
     }
 }
 ```
+
+Task2 (Collections)
+
+Write parameterized methods union (Set set1, Set set2) and intersect (Set set1, Set set2), realizing the operations of union and intersection of two sets. Test the operation of these techniques on two pre-filled sets.
+
+```java
+import java.io.*;
+import java.util.*;
+
+public class Task2 {
+
+    public static void main(String args[]) {
+        Set<String> set1 = new TreeSet<String>();
+
+        set1.add("ex1");
+        set1.add("ex2");
+        set1.add("ex3");
+        set1.add("ex4");
+
+        Set<String> set2 = new TreeSet<String>();
+
+        set2.add("ex3");
+        set2.add("ex4");
+        set2.add("ex5");
+        set2.add("ex6");
+
+        Set<String> union = new TreeSet<String>();
+
+        union.addAll(set1);
+        union.addAll(set2);
+
+        System.out.println("Set1 : " + set1);
+        System.out.println("Set2 : " + set2);
+        System.out.println("Union : " + union);
+        System.out.println();
+
+        Set<String> intersection = new TreeSet<String>();
+
+        intersection.addAll(set1);
+        intersection.retainAll(set2);
+
+        System.out.println("Intersection : " + intersection);
+    }
+}
+```
