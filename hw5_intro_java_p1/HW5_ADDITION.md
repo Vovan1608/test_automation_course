@@ -87,3 +87,39 @@ public class Task2 {
     }
 }
 ```
+
+Task3 (Collections)
+
+Create map personMap and add to it ten persons of type <String, String> (lastName, firstName).
+Output the entities of the map on the screen.
+There are at less two persons with the same firstName among these 10 people?
+Remove from the map person whose firstName is ”Orest” (or other). Print result.
+
+```java
+import java.io.*;
+import java.util.*;
+
+public class Task3 {
+
+    public static void main(String args[]) {
+
+        Map<String, String> personMap = new HashMap<String, String>();
+
+        personMap.put("Bob", "Gray");
+        personMap.put("Orest", "Red");
+        personMap.put("Mik", "Gred");
+        personMap.put("Loid", "Brown");
+        personMap.put("Orest", "Dary");
+        personMap.put("Kol", "Frey");
+        personMap.put("Mlper", "Dewq");
+        personMap.put("Mopb", "Uerf");
+        personMap.put("Myre", "Pots");
+        personMap.put("Orest", "Dot");
+
+        for (Map.Entry<String, String> persone : personMap.entrySet()) {
+            System.out.print(persone.getKey() + " ");
+            System.out.println(persone.getValue());
+        }
+    }
+}
+```
