@@ -138,5 +138,60 @@ Write class Student that provides information about the name of the student and 
    - display the list of students ordered by course.
 
 ```java
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
+class Student {
+
+    private String studentsName;
+    private int courseNumber;
+
+    public Student (String studentsName, int courseNumber) {
+        this.studentsName = studentsName;
+        this.courseNumber = courseNumber;
+    }
+
+    public String getStudentsName() {
+        return studentsName;
+    }
+
+    public void setStudentsName(String studentsName) {
+        this.studentsName = studentsName;
+    }
+
+    public int getCourseNumber() {
+        return courseNumber;
+    }
+
+    public void setCourseNumber(int courseNumber) {
+        this.courseNumber = courseNumber;
+    }
+
+    static void printStudents (ArrayList<Student> students, int courseNumber) {
+
+        for(Student st : students){
+
+            if (st.getCourseNumber() == courseNumber) {
+                System.out.println(st.getStudentsName());
+            }
+        }
+    }
+
+    public void compare () {
+
+    }
+
+    public static void main(String[] args) {
+
+        ArrayList<Student> myArrayList = new ArrayList<Student>();
+        myArrayList.add(new Student("Oper", 1));
+        myArrayList.add(new Student("Oper", 2));
+        myArrayList.add(new Student("Mik", 1));
+        myArrayList.add(new Student("Kol", 2));
+        myArrayList.add(new Student("Kile", 3));
+
+        Student.printStudents(myArrayList, 1);
+    }
+}
 ```
