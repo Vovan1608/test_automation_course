@@ -15,91 +15,30 @@ accomplish this, input five different usernames in the main method and output a 
 console indicating whether each of the entered names is valid or not.
 
 ```java
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.Arrays;
 
-class Task1 {
+public class Task1 {
 
-    public static boolean isCompareTwoStrings (String str1, String str2) {
-        boolean compareResult = str1.toLowerCase().equals(str2.toLowerCase());
+    static  Scanner scn = new Scanner(System.in);
 
-        return compareResult;
-    }
+    public static void main(String[] args) {
 
-    public static String makeSubstring (String str, int startIndex, int endIndex) {
-        String subString = str.substring(startIndex, endIndex);
+        String USER_NAME_PATTERN = "^[a-zA-Z][a-zA-Z0-9-_\\.]{3,15}$";
+        System.out.println("Enter yuor name");
 
-        return subString;
-    }
+        String name = scn.nextLine();
 
-    public static int checkSubstringInString (String str, String subStr) {
-        int index = str.indexOf(subStr);
+        Pattern pattern = Pattern.compile(USER_NAME_PATTERN);
+        Matcher matcher = pattern.matcher(name);
+        boolean matchFound = matcher.matches();
 
-        return index;
-    }
-
-    public static String replaceallOccurrencesOfOneSubstringWithAnother (String str, String subStrYouWant, String subStrInStr) {
-        String resStr = str.replaceAll(subStrYouWant, subStrInStr);
-
-        return resStr;
-    }
-
-    public static boolean hasStringDigits (String str) {
-        Pattern pattern = Pattern.compile("\\d", Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher(str);
-        boolean matchFound = matcher.find();
-
-        return matchFound;
-    }
-
-    public static String removeAllLeadingAndTrailingSpaces (String str) {
-        String trimStr = str.trim();
-
-        return trimStr;
-    }
-
-    public static String[] splitString (String str, String delimiter) {
-        String[] splitString = str.split(delimiter);
-
-        return splitString;
-    }
-
-    public static void main (String[] args) {
-
-        boolean res1 = Task1.isCompareTwoStrings("Vova", "Sasha");
-
-        System.out.println("Result of task1: " + res1);
-        System.out.println();
-
-        String res2 = Task1.makeSubstring("SoftSrve", 3, 8);
-
-        System.out.println("Result of task2: " + res2);
-        System.out.println();
-
-        int res3 = Task1.checkSubstringInString("SoftServe", "Serve");
-
-        System.out.println("Result of task3: " + res3);
-        System.out.println();
-
-
-        String str1 = "SoftServeSoftServSoftServe";
-        String resStr =  Task1.replaceallOccurrencesOfOneSubstringWithAnother(str1, "Sof", "Fas");
-        System.out.println(resStr);
-        System.out.println();
-
-        String str2 = "Soft22Serve";
-        boolean res4 = Task1.hasStringDigits(str2);
-        System.out.println("Result of task4: " + res4);
-        System.out.println();
-
-        String res5 = Task1.removeAllLeadingAndTrailingSpaces("    SoftServe        ");
-        System.out.println("Result of task5: " + res5);
-        System.out.println();
-
-        String text = "FIFA will never regret it";
-        String[] res6 = Task1.splitString(text, " ");
-        System.out.println("Result of task6: " + Arrays.toString(res6));
+        if(matchFound) {
+            System.out.println("Name " + name + " is valid");
+        } else {
+            System.out.println("Name " + name + " isn`t valid");
+        }
     }
 }
 ```
