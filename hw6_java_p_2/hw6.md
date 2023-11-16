@@ -230,5 +230,55 @@ Create an ArrayList that will store integers (Integer). Fill the collection with
 6. Sort the collection in ascending order and print the sorted collection to the console.
 
 ```java
+import java.io.*;
+import java.util.*;
 
+class Task3 {
+
+//    public static boolean checkNumber (int num) {
+//        return
+//    }
+
+    public static void main (String[] args) {
+
+        ArrayList<Integer> randomeIntegers = new ArrayList<Integer>();
+
+        int MIN_RANDOM_LIMIT = 1;
+        int MAX_RANDOME_LIMIT = 100;
+        int i = 0;
+        int step = 1;
+        int randomeIntegersLength = 20;
+        int sum = 0;
+
+        while ( i < randomeIntegersLength ) {
+            int randomNum = MIN_RANDOM_LIMIT + (int)( Math.random() * (MAX_RANDOME_LIMIT - MIN_RANDOM_LIMIT + 1));
+
+            randomeIntegers.add(randomNum);
+
+            i += step;
+            sum += randomNum;
+        }
+
+        System.out.println(randomeIntegers);
+
+        Collections.sort(randomeIntegers);
+
+        System.out.println("Min value is: " + randomeIntegers.get(0));
+        System.out.println("Max value is: " +randomeIntegers.get(randomeIntegersLength - 1));
+
+        double average = sum / randomeIntegersLength;
+
+        System.out.println("The average value is: " + average);
+
+        ArrayList<Integer> randomeOddIntegers = new ArrayList<Integer>();
+
+        for (int num : randomeIntegers) {
+            if ( num % 2 != 0 ) {
+                randomeOddIntegers.add(num);
+            }
+        }
+
+            System.out.println("Randome integers without even values: " + randomeOddIntegers);
+    }
+}
 ```
