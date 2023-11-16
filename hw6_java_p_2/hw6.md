@@ -137,5 +137,77 @@ A method getDiagonal() that returns the length of the diagonal of the rectangle.
 Demonstrate the correctness of the created methods.
 
 ```java
+import java.lang.Math;
 
+class Rectangle {
+
+    private double width;
+    private double height;
+    private double angle = 90;
+
+    public Rectangle () {
+
+    }
+
+    public Rectangle (double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    public double getWidth () {
+        return this.width;
+    }
+
+    public void setWidth (double width) {
+        this.width = width;
+    }
+
+    public double getHeight () {
+        return this.height;
+    }
+
+    public void setHeight (double height) {
+        this.height = height;
+    }
+
+    public double getAngle () {
+        return this.angle;
+    }
+
+    public void setAngle (double angle) {
+        this.angle = angle;
+    }
+
+    public double calculateArea(double width, double height, double angle) {
+        double area = width * height * Math.sin(angle);
+
+        return area;
+    }
+
+    public double calculatePerimeter (double width, double height) {
+        int doubled = 2;
+        double perimeter = doubled * (width + height);
+
+        return perimeter;
+    }
+
+    @Override
+    public String toString() {
+        return "Triangel { " +
+                "width = '" + width + '\'' +
+                " height = '" + height + '\'' +
+                " angle = '" + angle + '\'' +
+                '}';
+    }
+
+    public static void main (String[] args) {
+
+        Rectangle rect = new Rectangle(2, 5);
+
+        System.out.println(rect.toString());
+
+        System.out.println(rect.calculateArea(2, 5, 90));
+        System.out.println(rect.calculatePerimeter(2, 5));
+    }
+}
 ```
