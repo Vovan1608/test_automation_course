@@ -211,3 +211,24 @@ class Rectangle {
     }
 }
 ```
+
+Task 3
+Analysis of a Collection of Numbers
+
+Create an ArrayList that will store integers (Integer). Fill the collection with 20 random numbers from 1 to 100. Use the Random class to generate random numbers.
+
+1. Print all elements of the collection to the console.
+
+2. Find and print the minimum and maximum numbers in the collection.
+
+3. Calculate and print the average value of the numbers in the collection.
+
+4. Remove all even numbers from the collection, and then print the updated collection to the console.
+
+5. Check if the collection contains a given number (for example, 50), and print the result to the console.
+
+6. Sort the collection in ascending order and print the sorted collection to the console.
+
+```java
+
+```
