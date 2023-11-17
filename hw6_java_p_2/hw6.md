@@ -291,3 +291,59 @@ class Task3 {
     }
 }
 ```
+
+Task 4
+Operations with a Book Collection
+
+Book Class Structure:
+
+- Fields: title (title), author (author), genre (genre), year (publication year).
+- Constructors: To initialize a book with all fields.
+- Getters/Setters: For accessing and modifying fields.
+
+Task Description:
+
+1. Print List of Authors:
+
+   - Print the list of all authors in the collection to the console.
+
+2. List Authors by Genre:
+
+   - Print the list of authors who have written books in a given genre.
+
+3. List Authors by Publication Year:
+
+   - Print the list of authors whose books were published in a given year.
+
+4. Find Book by Author:
+
+   - Find a book in the collection written by a given author.
+
+5. Find Books by Publication Year:
+
+   - Find all books that were written in a given year.
+
+6. Find Books by Genre:
+
+   - Find all books that belong to a given genre.
+
+7. Remove Books by Author:
+
+   - Remove from the collection all books written by a given author.
+
+8. Sort Collection by Criterion:
+
+   - Sort the book collection by a given criterion (e.g., title, author, or year of publication).
+
+9. Merge Book Collections:
+
+   - Combine two book collections into one.
+
+Subcollection of Books by Genre:
+
+    - Create a subcollection of books from a given genre.
+
+Implementation Recommendations:
+
+    - Use ArrayList to store the book collection.
+    - For sorting, you can use Collections.sort() or stream methods with an appropriate comparator.
