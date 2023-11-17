@@ -232,12 +232,9 @@ Create an ArrayList that will store integers (Integer). Fill the collection with
 ```java
 import java.io.*;
 import java.util.*;
+import java.util.Comparator;
 
 class Task3 {
-
-//    public static boolean checkNumber (int num) {
-//        return
-//    }
 
     public static void main (String[] args) {
 
@@ -272,13 +269,25 @@ class Task3 {
 
         ArrayList<Integer> randomeOddIntegers = new ArrayList<Integer>();
 
+        int condition = 50;
+
         for (int num : randomeIntegers) {
             if ( num % 2 != 0 ) {
                 randomeOddIntegers.add(num);
             }
+
+            if ( num == condition ) {
+                System.out.println("It`s what you wish: " + num);
+            }
         }
 
-            System.out.println("Randome integers without even values: " + randomeOddIntegers);
+        System.out.println("Randome integers without even values: " + randomeOddIntegers);
+
+        ArrayList<Integer> copyRandomeIntegers = new ArrayList<Integer>();
+        copyRandomeIntegers = randomeIntegers;
+        copyRandomeIntegers.sort(Comparator.naturalOrder());
+
+        System.out.println("Sorted array : " + copyRandomeIntegers);
     }
 }
 ```
