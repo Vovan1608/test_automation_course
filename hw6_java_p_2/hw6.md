@@ -339,7 +339,7 @@ Task Description:
 
    - Combine two book collections into one.
 
-Subcollection of Books by Genre:
+10. Subcollection of Books by Genre:
 
     - Create a subcollection of books from a given genre.
 
