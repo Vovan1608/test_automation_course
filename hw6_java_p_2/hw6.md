@@ -347,3 +347,188 @@ Implementation Recommendations:
 
     - Use ArrayList to store the book collection.
     - For sorting, you can use Collections.sort() or stream methods with an appropriate comparator.
+
+```java
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.function.Function;
+
+class Book {
+
+    private String title;
+    private String author;
+    private String genre;
+    private int year;
+
+    public Book (String title, String author, String genre, int year) {
+        this.title = title;
+        this.author = author;
+        this.genre = genre;
+        this.year = year;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public static void print (ArrayList<Book> list) {
+        ArrayList<String> authors = new ArrayList<String>();
+
+        for (Book book : list) {
+            authors.add(book.getAuthor());
+        }
+
+        System.out.println("List of authors: " + authors);
+    }
+
+    public static void printListInGivenGenre (ArrayList<Book> list, String genre) {
+        ArrayList<String> authors = new ArrayList<String>();
+
+        for (Book book : list) {
+
+            if (book.getGenre() == genre) {
+                authors.add(book.getAuthor());
+            }
+        }
+
+        System.out.println("The list of authors who have written books in a given genre - " + genre + " are " + authors);
+    }
+
+    public static void printListInGivenYear (ArrayList<Book> list, int year) {
+        ArrayList<String> years = new ArrayList<String>();
+
+        for (Book book : list) {
+
+            if (book.getYear() == year) {
+                years.add(book.getAuthor());
+            }
+        }
+
+        System.out.println("The list of authors who have written books in a given year - " + year + " are " + years);
+    }
+
+    public static void printListInGivenAuthor (ArrayList<Book> list, String author) {
+        ArrayList<String> authors = new ArrayList<String>();
+
+        for (Book book : list) {
+
+            if (book.getAuthor() == author) {
+                authors.add(book.getAuthor());
+            }
+        }
+
+        System.out.println("The list of authors who have written books in a given author - " + author + " are " + authors);
+    }
+
+    public static void findBooksToGivenGenre (ArrayList<Book> list, String genre) {
+        ArrayList<String> books = new ArrayList<String>();
+
+        for (Book book : list) {
+
+            if (book.getGenre() == genre) {
+                books.add(book.getTitle());
+            }
+        }
+
+        System.out.println("All books that belong to a given genre - " + genre + " are " + books);
+    }
+
+    public static void removeAllBooksWrittenByGivenAuthor (ArrayList<Book> list, String author) {
+        ArrayList<String> books = new ArrayList<String>();
+
+        for (Book book : list) {
+
+            if (book.getAuthor() == author) {
+                books.add(book.getTitle());
+            }
+        }
+
+        System.out.println("Removed books by author - " + author + " are " + books);
+    }
+
+    public static void sortCollectionByGivenCriterion (ArrayList<Book> list, String criterion) {
+        ArrayList<String> books = new ArrayList<String>();
+        Comparator byRanking;
+
+                (Player player1, Player player2) -> Integer.compare(player1.getRanking(), player2.getRanking());
+        for (final Book book : list) {
+
+            if (criterion == "title") {
+                byRanking = (Book title1, Book title2) -> Integer.compare(book.getTitle(), book.getTitle());
+            } else if (criterion == "author") {
+                books.add(book.getAuthor());
+            } else if (criterion == "genre") {
+                books.add(book.getGenre());
+            }
+
+
+        }
+
+        System.out.println(list.sorted(Comparator.naturalOrder()));
+    }
+
+    @Override
+    public String toString() {
+        return "Book { " +
+                "title = '" + title + '\'' +
+                " author = '" + author + '\'' +
+                " genre = '" + genre + '\'' +
+                " year = '" + year + '\'' +
+                '}';
+    }
+
+    public static void main (String[] args) {
+
+        ArrayList<Book> books = new ArrayList<Book>();
+        books.add(new Book("TestName1", "TestAuthor1", "test", 1996));
+        books.add(new Book("TestName2", "TestAuthor2", "test", 2000));
+        books.add(new Book("TestName3", "TestAuthor4", "dev", 1985));
+        books.add(new Book("TestName4", "TestAuthor4", "dev", 2005));
+        books.add(new Book("TestName5", "TestAuthor4", "devOps", 2000));
+
+        Book.print(books);
+        System.out.println();
+        Book.printListInGivenGenre(books, "dev");
+        System.out.println();
+        Book.printListInGivenYear(books, 2000);
+        System.out.println();
+        Book.printListInGivenAuthor(books, "TestAuthor4");
+        System.out.println();
+        Book.findBooksToGivenGenre(books, "test");
+        System.out.println();
+        Book.removeAllBooksWrittenByGivenAuthor(books, "TestAuthor4");
+        System.out.println();
+        Book.sortCollectionByGivenCriterion(books, "author");
+        System.out.println();
+        Book.sortCollectionByGivenCriterion(books, "year");
+    }
+}
+```
