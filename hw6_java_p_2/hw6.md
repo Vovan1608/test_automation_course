@@ -351,7 +351,10 @@ Implementation Recommendations:
 ```java
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.function.Function;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 
 class Book {
 
@@ -475,25 +478,35 @@ class Book {
     }
 
     public static void sortCollectionByGivenCriterion (ArrayList<Book> list, String criterion) {
-        ArrayList<String> books = new ArrayList<String>();
-        Comparator byRanking;
 
-                (Player player1, Player player2) -> Integer.compare(player1.getRanking(), player2.getRanking());
-        for (final Book book : list) {
+        TreeSet<Book> books = new TreeSet<Book>();
 
-            if (criterion == "title") {
-                byRanking = (Book title1, Book title2) -> Integer.compare(book.getTitle(), book.getTitle());
-            } else if (criterion == "author") {
-                books.add(book.getAuthor());
-            } else if (criterion == "genre") {
-                books.add(book.getGenre());
-            }
-
-
+        if (criterion == "title") {
+            books = new TreeSet<Book>(Comparator.comparing(Book::getTitle));
+        } else if (criterion == "author") {
+            books = new TreeSet<Book>(Comparator.comparing(Book::getAuthor));
+        } else if (criterion == "genre") {
+            books = new TreeSet<Book>(Comparator.comparing(Book::getGenre));
+        } else if (criterion == "year") {
+            books = new TreeSet<Book>(Comparator.comparing(Book::getYear));
         }
 
-        System.out.println(list.sorted(Comparator.naturalOrder()));
+        books.addAll(list);
+        System.out.println(books);
     }
+
+    public static void combineBookCollections (ArrayList<Book> list1, ArrayList<Book> list2) {
+        Collection<Book> merged = Stream.of(list1, list2)
+                .flatMap(Collection::stream)
+                .collect(Collectors.toList());
+
+        System.out.println(merged);
+    }
+
+    public static void createSubcollection (ArrayList<Book> list, String genre) {
+        list.stream().filter( book -> book.getGenre() == genre).forEach(System.out::println);
+    }
+
 
     @Override
     public String toString() {
@@ -514,6 +527,13 @@ class Book {
         books.add(new Book("TestName4", "TestAuthor4", "dev", 2005));
         books.add(new Book("TestName5", "TestAuthor4", "devOps", 2000));
 
+        ArrayList<Book> books1 = new ArrayList<Book>();
+        books1.add(new Book("TestName11", "TestAuthor11", "test1", 1997));
+        books1.add(new Book("TestName21", "TestAuthor21", "test1", 2001));
+        books1.add(new Book("TestName31", "TestAuthor41", "dev1", 1986));
+        books1.add(new Book("TestName41", "TestAuthor41", "dev1", 2006));
+        books1.add(new Book("TestName51", "TestAuthor41", "devOps1", 2001));
+
         Book.print(books);
         System.out.println();
         Book.printListInGivenGenre(books, "dev");
@@ -529,6 +549,11 @@ class Book {
         Book.sortCollectionByGivenCriterion(books, "author");
         System.out.println();
         Book.sortCollectionByGivenCriterion(books, "year");
+        System.out.println();
+        Book.combineBookCollections(books, books1);
+        System.out.println();
+        Book.createSubcollection(books, "test");
     }
 }
+
 ```
