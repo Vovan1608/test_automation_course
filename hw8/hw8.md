@@ -22,7 +22,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public class TestSamples3 {
     private final String incorrectEmailMessage = "Please check if the email is written correctly";
@@ -141,7 +141,7 @@ public class TestSamples3 {
         emailInput.sendKeys(email);
         passwordInput.sendKeys(password);
         signInSubmitButton.click();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         assertThat(errorPassword.getText().trim(), is(incorrectPasswordMessage));
         closeButton.click();
     }
