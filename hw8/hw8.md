@@ -27,7 +27,7 @@ import java.time.Duration;
 public class TestSamples3 {
     private final String incorrectEmailMessage = "Please check if the email is written correctly";
     private final String incorrectPasswordMessage = "Bad email or password";
-    @FindBy(css = "app-header:nth-child(1) .ubs-header-sing-in-img")
+    @FindBy(css = "app-ubs .ubs-header-sing-in-img")
     private WebElement signInButton;
     @FindBy(css = ".ng-star-inserted > h1")
     private WebElement welcomeText;

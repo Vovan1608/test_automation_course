@@ -1,0 +1,200 @@
+{
+  "id": "af80c517-85e1-4820-8869-674fbd200bb6",
+  "version": "2.0",
+  "name": "check_adding_comment_to_news_test",
+  "url": "https://www.greencity.social",
+  "tests": [{
+    "id": "83d327df-2c72-4d34-ba18-edab11656d5e",
+    "name": "check_adding_comment_to_news",
+    "commands": [{
+      "id": "97168c11-85d6-4d3a-86b2-fedd19b3b416",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ad67e012-450f-4fbe-94b7-dbb54c0e6eeb",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1176",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b37aacd6-712e-43ee-aa0d-79c665e78324",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//app-ubs/app-header/header/div[@class='container-fluid']/div/div/nav/ul/li/a[@href='#/greenCity']",
+      "targets": [
+        ["css=app-header:nth-child(1) .nav-left-list:nth-child(4) > .url-name", "css:finder"],
+        ["xpath=(//a[contains(text(),'Green City')])[2]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '#/greenCity')])[2]", "xpath:href"],
+        ["xpath=//app-ubs/app-header/header/div[2]/div/div/nav/ul/li[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b61777ce-60d2-4f1f-8aeb-1ea13c7d1f67",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aec07495-bffc-402e-b6aa-29e6c69e29be",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@class='container']/div/div/nav/ul/li/a[@href='#/news']",
+      "targets": [
+        ["css=.nav-left-list:nth-child(1) > .url-name", "css:finder"],
+        ["xpath=//a[contains(text(),'Eco news')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '#/news')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fd7578ef-892b-4013-8088-158460a6b98f",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//img[@src='https://csb10032000a548f571.blob.core.windows.net/allfiles/d1b56f7b-f36b-4041-8ce0-ebb63b6852e8tempImage.jpg']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0da5dcbd-5062-4c93-a5de-6ef2013487bd",
+      "comment": "",
+      "command": "verifyNotEditable",
+      "target": "css=.primary-global-button",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "581048b1-4b99-4346-9d68-55b1bc8ca585",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return \"test\".repeat(2002)",
+      "targets": [],
+      "value": "var8000Char"
+    }, {
+      "id": "1d9d4aeb-ff62-4b21-9b62-afd3bbbbfcfa",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//textarea",
+      "targets": [],
+      "value": "${var8000Char}"
+    }, {
+      "id": "ebd75a21-5659-40aa-9d01-f5a19b392e6d",
+      "comment": "",
+      "command": "verifyNotEditable",
+      "target": "css=.primary-global-button",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4d44ae18-e435-406c-8ad7-2b53836778bb",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//textarea",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e9df37cb-00b0-41c6-bddf-5afc6719c3c9",
+      "comment": "",
+      "command": "verifyNotEditable",
+      "target": "css=.primary-global-button",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "16b100b6-a46c-4fa6-b6e6-17c91ba2b740",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//textarea",
+      "targets": [],
+      "value": "aaaaa"
+    }, {
+      "id": "28d773bb-baf2-45d4-9abc-eb5f9f6f9387",
+      "comment": "",
+      "command": "verifyEditable",
+      "target": "css=.primary-global-button",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f5ca6f63-8be7-453f-aaf2-eeb61a3b749f",
+      "comment": "",
+      "command": "store",
+      "target": "test comment",
+      "targets": [],
+      "value": "varComment"
+    }, {
+      "id": "06b0656d-e849-4ad4-bc17-9f6e1e41c025",
+      "comment": "",
+      "command": "click",
+      "target": "css=.comment-width",
+      "targets": [
+        ["css=.comment-width", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/app-comments-container/app-add-comment/form/div[2]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "65306e1c-47a9-4f79-93ab-83d82737e566",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//textarea",
+      "targets": [
+        ["css=.comment-width", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/app-comments-container/app-add-comment/form/div[2]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "${varComment}"
+    }, {
+      "id": "7b4163b4-0449-46fa-b175-99b593259ee6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.primary-global-button",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "12fd1f9f-4eb4-4d7a-be12-8fea393da8c0",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "xpath=//p[contains(text(), '${varComment}')]",
+      "targets": [],
+      "value": "3000"
+    }, {
+      "id": "86440c83-b5fd-4a44-a74c-0322da9a7e58",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "xpath=//p[contains(text(), '${varComment}')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dfa0fa4d-51af-4efe-96a2-504a020fa9ea",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//img[@src='assets/img/comments/delete.png']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4d464974-75b0-467e-8fd3-22a800aa4ea5",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=.main-container",
+      "targets": [],
+      "value": "10000"
+    }, {
+      "id": "33882642-ec08-415b-aec5-615a5f9fbfac",
+      "comment": "",
+      "command": "click",
+      "target": "css=.m-btn.primary-global-button",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "9dad2fa0-1af9-48bc-be39-fc67ed9c31fe",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["83d327df-2c72-4d34-ba18-edab11656d5e"]
+  }],
+  "urls": ["https://www.greencity.social/"],
+  "plugins": []
+}
